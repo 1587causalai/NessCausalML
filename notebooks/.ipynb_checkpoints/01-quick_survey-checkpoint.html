@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>课程 README &mdash; Robert Ness CausalML 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/causalAI.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/installation.html">项目简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notes/installation.html#id2">安装步骤</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notes/installation.html#id3">常见问题集</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Graph Networks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../01-quick_survey.html">课程 README</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Course-Outcomes">Course Outcomes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Who-is-this-course-for?">Who is this course for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Course-Description">Course Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Homework">Homework</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../01-quick_survey.html#课程大纲">课程大纲</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#作业安排">作业安排</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Section-1:-Refactored-thinking-for-machine-learning-and-causality">Section 1: Refactored-thinking for machine learning and causality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01-quick_survey.html#Causality-and-Model-based-Machine-Learning">Causality and Model-based Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01-quick_survey.html#Do-Causality-like-a-Bayesian">Do Causality like a Bayesian</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Section-2:-Core-elements-of-causal-inference">Section 2: Core elements of causal inference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01-quick_survey.html#How-to-speak-graph,-or-DAG-that’s-a-nice-model!">How to speak graph, or <em>DAG</em> that’s a nice model!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01-quick_survey.html#The-Tao-of-Do;-Modeling-and-Simulating-Causal-Interventions">The Tao of Do; Modeling and Simulating Causal Interventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Section-3:-Identication-and-Estimation-of-Causal-Effects-from-Data">Section 3: Identication and Estimation of Causal Effects from Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#Section-4:-Counterfactual-machine-learning">Section 4: Counterfactual machine learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../01-quick_survey.html#Counterfactual-deep-dive">Counterfactual deep dive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01-quick_survey.html#Programming-counterfactual-reasoning-into-AI">Programming counterfactual reasoning into AI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../01-quick_survey.html#相关资料">相关资料</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#TWIML社区课程">TWIML社区课程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#课程TA笔记">课程TA笔记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#教程">教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01-quick_survey.html#其他资料">其他资料</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../02-researchers.html">图网络 Researchers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02-researchers.html#北京智源人工智能研究院">北京智源人工智能研究院</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02-researchers.html#图网络和因果推理">图网络和因果推理</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Robert Ness CausalML</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>课程 README</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/notebooks/.ipynb_checkpoints/01-quick_survey-checkpoint.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<blockquote>
+<div><p>Ness CausalML 的快速调研</p>
+</div></blockquote>
+<div class="section" id="课程-README">
+<h1>课程 README<a class="headerlink" href="#课程-README" title="Permalink to this headline">¶</a></h1>
+<p>CS 7290 Special Topics in Data Science Spring 2020 Prof. Robert Osazuwa Ness Northeastern University, Khoury College of Computer Sciences, reach out to me at <a class="reference external" href="mailto:robertness&#37;&#52;&#48;gmail&#46;com">robertness<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<ul class="simple">
+<li><p>Time and Place: Thursdays, 6-9:15pm, room: Richards Hall 227 (RI 227)</p></li>
+<li><p>Syllabus and schedule: The syllabus for the Spring 2020 class is <a class="reference external" href="https://github.com/robertness/causalML/blob/master/syllabus.md">here</a>.</p></li>
+</ul>
+<p><em>If you are thinking of signing up for the course and have questions, reach out to me at robertness&#64;gmail.com, rather than my NEU email.</em></p>
+<div class="section" id="Course-Outcomes">
+<h2>Course Outcomes<a class="headerlink" href="#Course-Outcomes" title="Permalink to this headline">¶</a></h2>
+<p>完成本课程后，您将能够在顶级技术组织的数据科学和机器学习团队的决策系统中构建因果推理算法。 您将实施一个展示项目能力的 a portfolio project。 您将使用基于 PyTorch 的概率深度学习框架 Pyro 来实施家庭作业和项目，并且在课程结束时将成为使用该框架的专家。</p>
+</div>
+<div class="section" id="Who-is-this-course-for?">
+<h2>Who is this course for?<a class="headerlink" href="#Who-is-this-course-for?" title="Permalink to this headline">¶</a></h2>
+<p>Prerequisites include (DS5220 and DS5230) or (CS6140 and CS6220) or approval of the instructor</p>
+<p>You will gain the most from this course if you:</p>
+<ul class="simple">
+<li><p>您熟悉随机变量，联合概率分布，条件概率分布，贝叶斯规则和贝叶斯统计中的基本概念以及期望。</p></li>
+<li><p>您是一名优秀的软件工程师，或者渴望成为一名。</p></li>
+<li><p>You work in or plan to work on a team running experiments in a top-tier tech company or a technically advanced retail company.</p></li>
+<li><p>您计划作为 ML/AI 研究科学家工作，并想学习如何创建像人类一样推理的 Agent。</p></li>
+</ul>
+</div>
+<div class="section" id="Course-Description">
+<h2>Course Description<a class="headerlink" href="#Course-Description" title="Permalink to this headline">¶</a></h2>
+<p>This course will cover the following:</p>
+<ol class="arabic simple">
+<li><p>Causality in the context of model-based machine learning, Bayesian modeling, and programmatic AI</p></li>
+<li><p>Reasoning about probability distributions with directed acyclic graphs</p></li>
+<li><p>Interventions and do-calculus, identification and estimation of causal effects, covariate adjustment, and other methods of causal inference</p></li>
+<li><p>Counterfactual reasoning and algorithmic counterfactuals</p></li>
+<li><p>Causal reasoning in the context of A/B tests, multi-armed bandits, sequential decision-making, and reinforcement learning</p></li>
+<li><p>Deep causal latent variable models</p></li>
+</ol>
+<blockquote>
+<div><p>Attendance</p>
+</div></blockquote>
+<p>There will be several ways to get attendance points. These include:</p>
+<ul class="simple">
+<li><p>Proactively answering questions in class</p></li>
+<li><p>Completely online quizzes</p></li>
+<li><p>Contributing to the course wiki.</p></li>
+<li><p>Answering other students’ questions in the course forum.</p></li>
+</ul>
+<blockquote>
+<div><p>Online Course Materials and Readings</p>
+</div></blockquote>
+<p>Students will be provided access to online course materials. Much of the lecture notes will be provided in advance of the class. Students should go through the online course in advance of in-person class. This will increase the quality of the in-person classes and allow you to absorb more during class time.</p>
+<p>Readings will be assigned in advance of class. Students are expected to read the assigned readings in advance of each lecture.</p>
+<p>This course does not require the purchase of textbooks. However, it will rely heavily on the following two books: * Pearl, Judea. Causality. Cambridge university press, 2009. * Peters, Jonas, Dominik Janzing, and Bernhard Schölkopf. Elements of causal inference: foundations and learning algorithms. MIT Press, 2017. While not necessary for the course, these books are worth buying just to have as a reference.</p>
+</div>
+<div class="section" id="Homework">
+<h2>Homework<a class="headerlink" href="#Homework" title="Permalink to this headline">¶</a></h2>
+<p>The homework in this class will consist of 5 problem sets, which will combine mathematical derivations with programming exercises in Python. Submissions must be made via blackboard by 11.59pm on the due date.</p>
+<blockquote>
+<div><p>Project</p>
+</div></blockquote>
+<p>The goal of the project is to gain experience in implementing, testing, and presenting one of the methods covered in the lectures. Students will collaborate in groups of 2-4. We will provide a list of project descriptions. Students who want to pursue a unique project should speak to the instructor. Unique projects done in collaboration with a company are encouraged.</p>
+<blockquote>
+<div><p>Grading and Academic Guidelines</p>
+</div></blockquote>
+<p>The final grade for this course will be weighted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Homework</span><span class="p">:</span> <span class="mi">40</span><span class="o">%</span>
+<span class="n">Attendance</span><span class="p">:</span> <span class="mi">25</span><span class="o">%</span>
+<span class="n">Course</span> <span class="n">Project</span><span class="p">:</span> <span class="mi">35</span><span class="o">%</span>
+</pre></div>
+</div>
+<p>Refresh your knowledge of the university’s <a class="reference external" href="http://www.northeastern.edu/osccr/academic-integrity-policy/">policy</a> about academic integrity and plagiarism (this includes plagarizing code). There is <strong>zero-tolerance</strong> for cheating!</p>
+<blockquote>
+<div><p>Self-evaluation</p>
+</div></blockquote>
+<p>Students will be asked to indicate the amount of time spent on each homework, as well as the project. The will also be able to indicate what they think went well, and what they think did not go well.</p>
+</div>
+</div>
+<div class="section" id="课程大纲">
+<h1>课程大纲<a class="headerlink" href="#课程大纲" title="Permalink to this headline">¶</a></h1>
+<p>– by Robert Ness, <a class="reference external" href="mailto:robertness&#37;&#52;&#48;gmail&#46;com">robertness<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p>完成本课程后，您将能够在顶级技术组织的数据科学和机器学习团队的决策系统中构建因果推理算法。 您将实施一个展示项目能力的 a portfolio project。 您将使用基于PyTorch的概率深度学习框架Pyro来实施家庭作业和项目，并且在课程结束时将成为使用该框架的专家。</p>
+<div class="section" id="作业安排">
+<h2>作业安排<a class="headerlink" href="#作业安排" title="Permalink to this headline">¶</a></h2>
+<p>Homeworks are due on Sundays before 11:59pm EST through Blackboard</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 38%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Homework</p></th>
+<th class="head"><p>Date Assigned</p></th>
+<th class="head"><p>Date Due</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HW1</p></td>
+<td><p>January 30</p></td>
+<td><p>Februrary 13</p></td>
+</tr>
+<tr class="row-odd"><td><p>HW2</p></td>
+<td><p>Februrary 13</p></td>
+<td><p>Februrary 27</p></td>
+</tr>
+<tr class="row-even"><td><p>HW3</p></td>
+<td><p>Februrary 27</p></td>
+<td><p>March 12</p></td>
+</tr>
+<tr class="row-odd"><td><p>HW4</p></td>
+<td><p>March 12</p></td>
+<td><p>April 2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="Section-1:-Refactored-thinking-for-machine-learning-and-causality">
+<h2>Section 1: Refactored-thinking for machine learning and causality<a class="headerlink" href="#Section-1:-Refactored-thinking-for-machine-learning-and-causality" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Causality-and-Model-based-Machine-Learning">
+<h3>Causality and Model-based Machine Learning<a class="headerlink" href="#Causality-and-Model-based-Machine-Learning" title="Permalink to this headline">¶</a></h3>
+<p><strong>January 9 and 16, 2020</strong></p>
+<p>当前现状是：Many applied data scientists and machine learning engineers have a bias towards curve-fitting, overthinking training, and under-thinking how the data is generated.</p>
+<p>那么我们：After this section, you will have unlearned these biases, and have acquired new mental models for applied data science and machine learning.</p>
+<p>While we perform this mental refactoring, we will graft on a high-level understanding of causality in the context of machine learning. 这将奠定基础 for the rest of the course. 但更重要的是, you’ll have a mental model that will increase your ROI on your future self-study. 因此，即使您在本节之后放弃课程，您仍然会领先于其他同学。</p>
+<p><strong>Topics</strong></p>
+<ul class="simple">
+<li><p>Thinking about and modeling the data generating process</p></li>
+<li><p>Model iteration through falsification</p></li>
+<li><p>Directed graphs, causalility, and anti-causal machine learning</p></li>
+<li><p>Examples from natural and social science</p></li>
+<li><p>Deep generative models</p></li>
+<li><p>Primer on probabilistic programming</p></li>
+</ul>
+</div>
+<div class="section" id="Do-Causality-like-a-Bayesian">
+<h3>Do Causality like a Bayesian<a class="headerlink" href="#Do-Causality-like-a-Bayesian" title="Permalink to this headline">¶</a></h3>
+<p>您或许已经知道并应用了贝叶斯公式，或者至少听说过它。在本部分中，you will go beyond Baye’s rule to acquiring a Bayesian mental model for tackling machine learning problems, and building learning agents that drive decision-making in organizations.</p>
+<p><strong>Topics</strong></p>
+<ul class="simple">
+<li><p>贝叶斯机器学习入门</p></li>
+<li><p>Communication theory and Bayes</p></li>
+<li><p>Bayesian notation</p></li>
+<li><p>Independence of cause and mechanism</p></li>
+<li><p>贝叶斯监督学习案例研究</p></li>
+<li><p>贝叶斯决策</p></li>
+<li><p>Modeling uncertainty in Bayesian models</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="Section-2:-Core-elements-of-causal-inference">
+<h2>Section 2: Core elements of causal inference<a class="headerlink" href="#Section-2:-Core-elements-of-causal-inference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="How-to-speak-graph,-or-DAG-that’s-a-nice-model!">
+<h3>How to speak graph, or <em>DAG</em> that’s a nice model!<a class="headerlink" href="#How-to-speak-graph,-or-DAG-that’s-a-nice-model!" title="Permalink to this headline">¶</a></h3>
+<p>图提供了一种用于 composing, communicating, and reasoning about generative models 语言。在本节中，您将学习这种语言。您将能够使用图形算法来描述和推理数据的概率分布。</p>
+<p><strong>Topics</strong></p>
+<ul class="simple">
+<li><p>DAGs, joint probability distributions, and conditional independence</p></li>
+<li><p>D-separation, V-structures/colliders, Markov blanket</p></li>
+<li><p>Markov property and disentangling joint probability</p></li>
+<li><p>Markov equivalence</p></li>
+<li><p>Faithfulness and causal minimality</p></li>
+<li><p>Plate models for tensor programming</p></li>
+<li><p>Other common graph types in generative machine learning</p></li>
+</ul>
+</div>
+<div class="section" id="The-Tao-of-Do;-Modeling-and-Simulating-Causal-Interventions">
+<h3>The Tao of Do; Modeling and Simulating Causal Interventions<a class="headerlink" href="#The-Tao-of-Do;-Modeling-and-Simulating-Causal-Interventions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Dates: February 13 and 20, 2020</strong></p>
+<p>An <em>intervention</em> is an action by humans or learning agents that change the data generating process, and thus the distribution underlying the training data. If a machine learning model can predict the outcome of an intervention, it is by definition a causal model. Even the most cutting-edge deep learning models can predict the outcomes of interventions unless they are also causal models.</p>
+<p>After this section, students will be able to build their first causal generative machine learning model using a deep learning framework.</p>
+<p><strong>Topics</strong></p>
+<ul class="simple">
+<li><p>Observation vs intervention, and the intervention definition of causality</p></li>
+<li><p>Types of interventions</p></li>
+<li><p>Using interventions to falsify and improve models</p></li>
+<li><p>“do”-notation</p></li>
+<li><p>Intervention prediction in simulation models</p></li>
+<li><p>Interventions as graph mutilation and program transforms</p></li>
+<li><p>Breaking equivalence with interventions</p></li>
+<li><p>Simulating causal effects and <em>potential outcomes</em></p></li>
+<li><p>Implementation examples from forecasting</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="Section-3:-Identication-and-Estimation-of-Causal-Effects-from-Data">
+<h2>Section 3: Identication and Estimation of Causal Effects from Data<a class="headerlink" href="#Section-3:-Identication-and-Estimation-of-Causal-Effects-from-Data" title="Permalink to this headline">¶</a></h2>
+<p>因果推理的现代实践，尤其是在技术行业中，是在估计因果效应- i.e. quantification of how much a cause affects an outcome. 在本节之后，you will be able to explain to colleagues when estimation is impossible even when they think they can crack it with enough data or a clever algorithm. You will be able to stand your ground in discussions about causality with Ph.D. statisticians and economists at top tech companies. 您将掌握程序性因果效应估计。您将获得深入研究实际使用的标准估计方法所需的基础。</p>
+<p><strong>Dates: February 27, March 5 and 12, 2020</strong></p>
+<p><strong>Topics</strong></p>
+<ul class="simple">
+<li><p>Why we care about estimating causal effects</p></li>
+<li><p>Defining “confounding” with DAGs</p></li>
+<li><p>Simpson’s Paradox, Monte Hall problem, Berkson’s Paradox</p></li>
+<li><p>Statistics of causal effects: the estimand, the estimator, and the estimate</p></li>
+<li><p>Identification: Why causal effect inference is hard no matter how much data you have</p></li>
+<li><p>What is the “do”-calculus?</p></li>
+<li><p>Potential outcomes and individual treatment effects</p></li>
+<li><p>Valid adjustment sets for causal effect estimation</p></li>
+<li><p>The back door and the front door</p></li>
+<li><p>Single world intervention graphs</p></li>
+<li><p>Ignorability and SUTVA</p></li>
+<li><p>Introduction to the <a class="reference external" href="https://www.microsoft.com/en-us/research/blog/dowhy-a-library-for-causal-inference/">DoWhy</a> library</p></li>
+<li><p>Statistical estimation methods: G-formula, propensity matching, instrumental variables, inverse probability weighting, and more.</p></li>
+</ul>
+</div>
+<div class="section" id="Section-4:-Counterfactual-machine-learning">
+<h2>Section 4: Counterfactual machine learning<a class="headerlink" href="#Section-4:-Counterfactual-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>Counterfactual reasoning sounds like “I chose company A, and now I’m miserable but had I worked for company B, I would have been happy.” We make decisions and observe their causal consequences. Then, based on our beliefs about the mechanisms of cause and effect in the world, we ask how would have things turned out differently if we had made a different decision. We use this reasoning to improve our mental models for decision-making. 相对于典型的机器学习算法 that make decisions based exclusively
+on observed training data (things that <em>actually</em> happened), <strong>（人类使用反事实推理）humans make decisions based both on observed data and imagined data (things that might have happened)</strong>. Future generations of machine learning need to incorporate counterfactual reasoning if they are to reason about the world as well as humans.</p>
+<p>完成本节后，您将能够在代码中实现反事实推理算法。 This will prepare you to implement counterfactual reasoning algorithms in automated decision-making settings in industry, such as bandits and computational advertising. 您将有资格解决强化学习中的前沿问题。 Y您将能够评估机器学习算法的可解释性和算法偏差。</p>
+<div class="section" id="Counterfactual-deep-dive">
+<h3>Counterfactual deep dive<a class="headerlink" href="#Counterfactual-deep-dive" title="Permalink to this headline">¶</a></h3>
+<p><strong>Topics</strong></p>
+<ul class="simple">
+<li><p>Counterfactual definition of causality</p></li>
+<li><p>Counterfactuals vs interventions</p></li>
+<li><p>Introduction to the structural causal model (SCM)</p></li>
+<li><p>Multiverse counterfactuals with SCMs</p></li>
+<li><p>Keystone counterfactual identities</p></li>
+<li><p>Relationship between SCMs and potential outcomes</p></li>
+</ul>
+</div>
+<div class="section" id="Programming-counterfactual-reasoning-into-AI">
+<h3>Programming counterfactual reasoning into AI<a class="headerlink" href="#Programming-counterfactual-reasoning-into-AI" title="Permalink to this headline">¶</a></h3>
+<p><strong>Dates: April 2 and 9, 2020</strong></p>
+<ul class="simple">
+<li><p>Counterfactual reasoning in bandits and reinforcement learning</p></li>
+<li><p>Reparameterizing probablistic models for multiverse counterfactuals</p></li>
+<li><p>Counterfactuals and intuitive physics</p></li>
+<li><p>From SCMs to programs and simulations</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="相关资料">
+<h1>相关资料<a class="headerlink" href="#相关资料" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Ness Causal Machine Learning 60-Minute Blitz</p></li>
+</ul>
+<p>一个关于它近期工作的 60分钟快速报告。<a class="reference external" href="https://www.youtube.com/watch?v=Gdkc0cMnsL4">https://www.youtube.com/watch?v=Gdkc0cMnsL4</a></p>
+<ul class="simple">
+<li><p>Ness 下注因果强化学习</p></li>
+</ul>
+<p>Last week, I started preparations to teach a few data science grad students on a special topic — causal modeling in reinforcement learning. 在思考这个话题后，我敢打赌：因果强化学习将在未来十年内成为AI杀手级的 marketing app。</p>
+<p><a class="reference external" href="https://towardsdatascience.com/my-bet-on-causal-reinforcement-learning-d94fc9b37466">https://towardsdatascience.com/my-bet-on-causal-reinforcement-learning-d94fc9b37466</a></p>
+<div class="section" id="TWIML社区课程">
+<h2>TWIML社区课程<a class="headerlink" href="#TWIML社区课程" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://twimlai.com/program/causal-modeling-in-machine-learning/">Causal Modeling in Machine Learning</a></p>
+<p>We’re collaborating with research scientist and instructor Robert Ness to 将他的课程序列 “机器学习中的因果建模” 引入TWIML社区。 因果关系已成为ML/AI领域中非常热门的话题。 In fact, it’s come up in a good number of my recent conversations, like this one with Zach Lipton. 一个现状就是：One of the challenges facing those interested in learning about causality in ML is that most resources on the topic are geared towards the needs of statisticians or economists, versus those of data scientists and
+machine learning engineers.</p>
+<p>罗伯特（Robert）是初创公司 Gamalon的 ML 研究科学家，也是 Northeastern University 的一名讲师，他针对机器学习中的因果建模开发了一系列六个课程模块，这些模块旨在使数据科学家和工程师更加实用和方便地使用。他正在为东北大学的研究生现场授课，通过我们的新合作伙伴，罗伯特还将通过TWIML平台（即Zoom和Slack）托管一个学习小组。该学习小组将为TWIML入学者提供上线课程的一些好处。罗伯特将按顺序在每个星期的学习后每周举行一次回顾会议，可以通过Slack回答问题，可以对提交的作业进行个人评分，还可以协助完成课程作业和项目。</p>
+<p>这六个模块在AltDeep网站上列出。They are:</p>
+<ul class="simple">
+<li><p>机器学习中基于模型的思维。 Lay the foundation for causal models by deconstructing mental biases and acquiring new mental models for applied DS/ML.</p></li>
+<li><p>Do Causality like a Bayesian. Continue your “mental refactoring” by developing a Bayesian mental model for machine learning.</p></li>
+<li><p>How to Speak Graph; or DAG that’s a Nice Model! Become fluent in directed graphs and graph algorithms as a language of probability.</p></li>
+<li><p>The Tao of Do; Modeling and Simulating Causal Interventions. Learn to build your first causal generative machine learning model using a deep learning framework</p></li>
+<li><p>Applied Causal Inference; Identification and Estimation of Causal Effects from Data. Gain mastery of programmatic causal effect estimation.</p></li>
+<li><p>Counterfactual Machine Learning. Implement counterfactual reasoning algorithms in automated decision-making settings in industry.</p></li>
+</ul>
+<p>完成本课程后，您将能够在顶级技术组织的数据科学和机器学习团队的决策系统中构建因果推理算法。您将实施一个展示项目能力的 a portfolio project。 您将使用基于PyTorch的概率深度学习框架Pyro来实施家庭作业和项目，并且在课程结束时将成为使用该框架的专家。</p>
+</div>
+<div class="section" id="课程TA笔记">
+<h2>课程TA笔记<a class="headerlink" href="#课程TA笔记" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bookdown.org/robertness/causalml/docs/">https://bookdown.org/robertness/causalml/docs/</a></p></li>
+</ul>
+<p>这些是Robert O. Ness博士教授的有关机器学习中因果推理和建模的课程的讲义。这些笔记是一个正在进行的工作，是随着课程的进行而创建的。 它们是由教师，TA的Kaushal Paneri和Sicheng Hao课程以及该课程的2019年夏季学生创建的。</p>
+<p><strong>Table of Contents:</strong></p>
+<ol class="arabic simple">
+<li><p>因果推断概述和课程目标</p></li>
+<li><p>贝叶斯网概率建模教程</p></li>
+<li><p>Pyro 建模教程</p></li>
+<li><p>Reasoning on DAGs</p></li>
+<li><p>Introduction to Interventions</p></li>
+<li><p>Calculating intervention distributions by covariate adjustment</p></li>
+<li><p>Confounding, Paradoxes</p></li>
+<li><p>Other stuff</p></li>
+</ol>
+</div>
+<div class="section" id="教程">
+<h2>教程<a class="headerlink" href="#教程" title="Permalink to this headline">¶</a></h2>
+<p>我希望有一些相关教程。</p>
+<p>CausalML官方</p>
+<p><a class="reference external" href="https://github.com/robertness/causalML/tree/master/tutorials">https://github.com/robertness/causalML/tree/master/tutorials</a></p>
+</div>
+<div class="section" id="其他资料">
+<h2>其他资料<a class="headerlink" href="#其他资料" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.statworx.com/ch/blog/machine-learning-goes-causal-i-why-causality-matters/">Machine Learning Goes Causal I: Why Causality Matters</a></p>
+<p>在STATWORX，我们很高兴看到近年来机器学习的新领域不断发展：因果机器学习。简而言之，因果机器学习是机器学习算法的科学研究，可以估算因果效应。在过去的几年中，已经开发了不同的因果机器学习算法，将机器学习的进展与因果推理理论相结合，以估计不同类型的因果效应。我的同事Markus在较早的博客文章中已经介绍了其中一些算法。</p>
+<p>由于因果机器学习是一个相当复杂的主题，因此我将撰写一系列博客文章，以逐步深入研究这个崭新的数据科学世界。第一篇博客文章是对该主题的介绍，重点介绍了因果机器学习是什么以及为什么它在实践中以及对数据科学的未来很重要。</p>
+<p><a class="reference external" href="https://www.statworx.com/at/blog/machine-learning-goes-causal-ii-meet-the-random-forests-causal-brother/">Machine Learning Goes Causal II: Meet the Random Forest’s Causal Brother</a></p>
+<p>认识随机森林的因果兄弟</p>
+<ul class="simple">
+<li><p>在大多数应用中，也要关注超出平均效果的范围，以了解因果关系如何随可观察到的特征而变化。</p></li>
+</ul>
+<p>Estimating heterogeneous treatment effects is nothing new. Econometrics and other social sciences have long been studying which variables predict a smaller or larger than average treatment effect, which in statistical terms is also known as Moderation. One of the most traditional ways to find heterogeneous treatment effects is to use a Multiple Linear Regression with interaction terms between the variables of interest (i.e. the ones which might lead to treatment heterogeneity) and the treatment
+indicator. In this blog post, I will always assume that the data is from a randomised experiment, such that the assumptions to identify treatment effects are valid without further complications. We then conclude that the treatment effect depends on the variables whose interaction term is statistically significant.</p>
+<p>估计异质治疗效果并不是什么新鲜事。计量经济学和其他社会科学长期以来一直在研究哪种变量预测的效果小于或大于平均治疗效果，这在统计学上也称为“适度”。寻找异质治疗效果的最传统方法之一是使用多重线性回归，其中在感兴趣的变量（即可能导致治疗异质性的变量）与治疗指标之间存在相互作用项。在此博客文章中，我将始终假设数据来自随机实验，从而确定治疗效果的假设是有效的，而不会造成进一步的复杂性。然后我们得出结论，治疗效果取决于相互作用项在统计学上具有显着性的变量。</p>
+<p>Over recent years, different Machine Learning algorithms have been developed to estimate heterogeneous treatment effects. Most of them are based on the idea of Decision Trees or Random Forests, just like the one I focus on in this blog post: Generalised Random Forests by Athey, Tibshirani and Wager (2018).</p>
+<p>Generalised Random Forests follows the idea of Random Forests and apart from heterogeneous treatment effect estimation, this algorithm can also be used for non-parametric quantile regression and instrumental variable regression. It keeps the main structure of Random Forests such as the recursive partitioning, subsampling and random split selection. However, instead of averaging over the trees Generalised Random Forests estimate a weighting function and uses the resulting weights to solve a local
+GMM model. To estimate heterogeneous treatment effects, this algorithm has two important additional features, which distinguish it from standard Random Forests.</p>
+<p>近年来，已经开发了不同的机器学习算法来估计异构处理效果。它们中的大多数基于决策树或随机森林的概念，就像我在此博客文章中关注的主题一样：Athey，Tibshirani和Wager（2018）撰写的Generalized Random
+Forests。广义随机森林遵循随机森林的思想，除了异质处理效果估计以外，该算法还可用于非参数分位数回归和工具变量回归。它保留了随机森林的主要结构，例如递归分区，子采样和随机分割选择。但是，不是对树进行平均，而是使用广义随机森林估计加权函数，并使用所得的加权来求解局部GMM模型。为了评估异构处理效果，该算法具有两个重要的附加功能，使其与标准随机森林区分开来。</p>
+<p><a class="reference external" href="https://www.ericsson.com/en/blog/2020/2/causal-inference-machine-learning">From how to why: An overview of causal inference in machine learning</a></p>
+<p>Artificial intelligence is good at predicting outcomes, but how do we go one step further? Here, we discuss how AI can use causal inference and machine learning to measure the effects of multiple variables – and why it’s important for technological progression.</p>
+<p>人工智能擅长预测结果，但我们又该如何走？在这里，我们将讨论AI如何使用因果推理和机器学习来衡量多个变量的影响，以及为什么它对技术进步很重要。</p>
+<p>Yoshua Bengio, one of the world’s most highly recognized AI experts, explained in a recent Wired interview: “It’s a big thing to integrate [causality] into AI. Current approaches to machine learning assume that the trained AI system will be applied on the same kind of data as the training data. In real life it is often not the case.”</p>
+<p>全球知名度最高的AI专家之一Yoshua Bengio在《连线》杂志最近的一次采访中解释说：“将因果关系整合到AI中是一件大事。当前的机器学习方法假设受过训练的AI系统将与训练数据应用于相同类型的数据。在现实生活中，情况往往并非如此。”最近的图灵奖获得者Yann LeCun在推特上持相同观点：“许多ML / DL（深度学习）人员知道因果推理是提高泛化的重要方法。”</p>
+<p>因果推理和机器学习可以解决当今机器学习面临的最大问题之一-许多现实世界的数据生成的方式与我们用来训练AI模型的数据的方式不同。这意味着机器学习模型通常不足以处理输入数据类型的变化，而且不能总是一概而论。相比之下，因果推理通过考虑在缺乏信息时可能发生的情况来明确克服了这个问题。最终，这意味着我们可以利用因果推理使ML模型更健壮和更通用。</p>
+<p><a class="reference external" href="https://www.microsoft.com/en-us/research/group/causal-inference/">微软因果组 Causality and Machine Learning</a></p>
+<ul class="simple">
+<li><p>机器学习与因果推理：机器学习与因果推理之间存在丰富的相互作用。机器学习不仅为传统的因果推断技术提供了扩展方法，以利用当今的大规模，高维数据集进行关键的政策评估和质量决策，而且搜索算法等计算方法对于创建AutoCausal至关重要-一个自动化的数据科学家，可以集成领域知识，验证因果假设并按AutoML调整超参数。同时，因果推理方法和见解与鲁棒性，可概括性，偏见和可解释性等核心机器学习挑战直接相关。此外，对因果关系的理解被广泛认为是当前AI方法的关键缺陷，并且是构建更多类似人的机器智能的必要先驱。</p></li>
+<li><p>从数据中回答因果问题：确定因果效应是科学查询的一个组成部分，涉及广泛的问题，例如了解在线系统的行为，社会政策的影响或疾病的危险因素。随着计算越来越影响各行各业，因果问题对于我们构建的所有计算机系统和应用程序的设计和数据驱动评估也至关重要。例如，算法建议如何影响我们的购买决策？它们如何影响学生的学习成果或医生的效能？这些是棘手的问题，需要考虑反事实：在拥有不同系统，政策或干预措施的世界中会发生什么？如果没有随机实验和因果推理，基于相关性的方法会使我们误入歧途。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Heyang Gong
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,551 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "Collapsed": "false"
+   },
+   "source": [
+    "> Ness CausalML 的快速调研\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 课程 README \n",
+    "\n",
+    "CS 7290 Special Topics in Data Science\n",
+    "Spring 2020\n",
+    "Prof. Robert Osazuwa Ness\n",
+    "Northeastern University, Khoury College of Computer Sciences, reach out to me at robertness@gmail.com\n",
+    "  \t\n",
+    "\n",
+    "- Time and Place: Thursdays, 6-9:15pm, room: Richards Hall 227 (RI 227)\n",
+    "\n",
+    "-  Syllabus and schedule: The syllabus for the Spring 2020 class is [here](https://github.com/robertness/causalML/blob/master/syllabus.md).\n",
+    "\n",
+    "*If you are thinking of signing up for the course and have questions, reach out to me at robertness@gmail.com, rather than my NEU email.*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Course Outcomes\n",
+    "\n",
+    "完成本课程后，您将能够在顶级技术组织的数据科学和机器学习团队的决策系统中构建因果推理算法。\n",
+    "您将实施一个展示项目能力的 a portfolio project。\n",
+    "您将使用基于 PyTorch 的概率深度学习框架 Pyro 来实施家庭作业和项目，并且在课程结束时将成为使用该框架的专家。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Who is this course for?\n",
+    "\n",
+    "Prerequisites include (DS5220 and DS5230) or (CS6140 and CS6220) or approval of the instructor\n",
+    "\n",
+    "You will gain the most from this course if you:\n",
+    "\n",
+    "* 您熟悉随机变量，联合概率分布，条件概率分布，贝叶斯规则和贝叶斯统计中的基本概念以及期望。\n",
+    "* 您是一名优秀的软件工程师，或者渴望成为一名。\n",
+    "* You work in or plan to work on a team running experiments in a top-tier tech company or a technically advanced retail company.\n",
+    "* 您计划作为 ML/AI 研究科学家工作，并想学习如何创建像人类一样推理的 Agent。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Course Description\n",
+    "\n",
+    "This course will cover the following:\n",
+    "\n",
+    "1. Causality in the context of model-based machine learning, Bayesian modeling, and programmatic AI\n",
+    "1. Reasoning about probability distributions with directed acyclic graphs\n",
+    "1. Interventions and do-calculus, identification and estimation of causal effects, covariate adjustment, and other methods of causal inference\n",
+    "1. Counterfactual reasoning and algorithmic counterfactuals\n",
+    "1. Causal reasoning in the context of A/B tests, multi-armed bandits, sequential decision-making, and reinforcement learning\n",
+    "1. Deep causal latent variable models\n",
+    "\n",
+    "> Attendance\n",
+    "\n",
+    "There will be several ways to get attendance points.  These include:\n",
+    "\n",
+    "* Proactively answering questions in class\n",
+    "* Completely online quizzes\n",
+    "* Contributing to the course wiki.\n",
+    "* Answering other students' questions in the course forum.\n",
+    "\n",
+    "> Online Course Materials and Readings\n",
+    "\n",
+    "Students will be provided access to online course materials.  Much of the lecture notes will be provided in advance of the class.  Students should go through the online course in advance of in-person class.  This will increase the quality of the in-person classes and allow you to absorb more during class time.\n",
+    "\n",
+    "Readings will be assigned in advance of class.  Students are expected to read the assigned readings in advance of each lecture.\n",
+    "\n",
+    "This course does not require the purchase of textbooks.  However, it will rely heavily on the following two books:\n",
+    "* Pearl, Judea. Causality. Cambridge university press, 2009.\n",
+    "* Peters, Jonas, Dominik Janzing, and Bernhard Schölkopf. Elements of causal inference: foundations and learning algorithms. MIT Press, 2017.\n",
+    "While not necessary for the course, these books are worth buying just to have as a reference."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Homework\n",
+    "\n",
+    "The homework in this class will consist of 5 problem sets, which will combine mathematical derivations with programming exercises in Python. Submissions must be made via blackboard by 11.59pm on the due date.\n",
+    "\n",
+    "> Project\n",
+    "\n",
+    "The goal of the project is to gain experience in implementing, testing, and presenting one of the methods covered in the lectures. Students will collaborate in groups of 2-4. We will provide a list of project descriptions.  Students who want to pursue a unique project should speak to the instructor.  Unique projects done in collaboration with a company are encouraged.\n",
+    "\n",
+    "> Grading and Academic Guidelines\n",
+    "\n",
+    "The final grade for this course will be weighted as follows:\n",
+    "\n",
+    "    Homework: 40%\n",
+    "    Attendance: 25%\n",
+    "    Course Project: 35%\n",
+    "\n",
+    "Refresh your knowledge of the university's [policy](http://www.northeastern.edu/osccr/academic-integrity-policy/) about academic integrity and plagiarism (this includes plagarizing code). There is **zero-tolerance** for cheating!\n",
+    "\n",
+    "> Self-evaluation\n",
+    "\n",
+    "Students will be asked to indicate the amount of time spent on each homework, as well as the project. The will also be able to indicate what they think went well, and what they think did not go well."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 课程大纲 \n",
+    "\n",
+    "-- by Robert Ness, robertness@gmail.com\n",
+    "\n",
+    "\n",
+    "完成本课程后，您将能够在顶级技术组织的数据科学和机器学习团队的决策系统中构建因果推理算法。\n",
+    "您将实施一个展示项目能力的 a portfolio project。\n",
+    "您将使用基于PyTorch的概率深度学习框架Pyro来实施家庭作业和项目，并且在课程结束时将成为使用该框架的专家。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 作业安排\n",
+    "\n",
+    "Homeworks are due on Sundays before 11:59pm EST through Blackboard\n",
+    "\n",
+    "| Homework | Date Assigned | Date Due     |\n",
+    "|----------|---------------|--------------|\n",
+    "| HW1      | January 30    | Februrary 13 |\n",
+    "| HW2      | Februrary 13  | Februrary 27 |\n",
+    "| HW3      | Februrary 27  | March 12     |\n",
+    "| HW4      | March 12      | April 2      |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Section 1: Refactored-thinking for machine learning and causality"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Causality and Model-based Machine Learning\n",
+    "\n",
+    "**January 9 and 16, 2020**\n",
+    "\n",
+    "当前现状是：Many applied data scientists and machine learning engineers have a bias towards curve-fitting, overthinking training, and under-thinking how the data is generated.  \n",
+    "\n",
+    "那么我们：After this section, you will have unlearned these biases, and have acquired new mental models for applied data science and machine learning.\n",
+    "\n",
+    "While we perform this mental refactoring, we will graft on a high-level understanding of causality in the context of machine learning.  这将奠定基础 for the rest of the course.  但更重要的是, you'll have a mental model that will increase your ROI on your future self-study.  因此，即使您在本节之后放弃课程，您仍然会领先于其他同学。\n",
+    "\n",
+    "**Topics**\n",
+    "\n",
+    "* Thinking about and modeling the data generating process\n",
+    "* Model iteration through falsification\n",
+    "* Directed graphs, causalility, and anti-causal machine learning\n",
+    "* Examples from natural and social science\n",
+    "* Deep generative models\n",
+    "* Primer on probabilistic programming"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Do Causality like a Bayesian\n",
+    "\n",
+    "\n",
+    "您或许已经知道并应用了贝叶斯公式，或者至少听说过它。在本部分中，you will go beyond Baye's rule to acquiring a Bayesian mental model for tackling machine learning problems, and building learning agents that drive decision-making in organizations.\n",
+    "\n",
+    "\n",
+    "**Topics**\n",
+    "\n",
+    "* 贝叶斯机器学习入门\n",
+    "* Communication theory and Bayes\n",
+    "* Bayesian notation\n",
+    "* Independence of cause and mechanism\n",
+    "* 贝叶斯监督学习案例研究\n",
+    "* 贝叶斯决策\n",
+    "* Modeling uncertainty in Bayesian models"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Section 2: Core elements of causal inference"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### How to speak graph, or *DAG* that's a nice model!\n",
+    "\n",
+    "\n",
+    "\n",
+    "图提供了一种用于 composing, communicating, and reasoning about generative models 语言。在本节中，您将学习这种语言。您将能够使用图形算法来描述和推理数据的概率分布。\n",
+    "\n",
+    "**Topics**\n",
+    "\n",
+    "* DAGs, joint probability distributions, and conditional independence\n",
+    "* D-separation, V-structures/colliders, Markov blanket\n",
+    "* Markov property and disentangling joint probability \n",
+    "* Markov equivalence\n",
+    "* Faithfulness and causal minimality\n",
+    "* Plate models for tensor programming\n",
+    "* Other common graph types in generative machine learning"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### The Tao of Do; Modeling and Simulating Causal Interventions\n",
+    "\n",
+    "**Dates: February 13 and 20, 2020**\n",
+    "\n",
+    "An *intervention* is an action by humans or learning agents that change the data generating process, and thus the distribution underlying the training data.  If a machine learning model can predict the outcome of an intervention, it is by definition a causal model.  Even the most cutting-edge deep learning models can predict the outcomes of interventions unless they are also causal models.\n",
+    "\n",
+    "After this section, students will be able to build their first causal generative machine learning model using a deep learning framework.\n",
+    "\n",
+    "**Topics**\n",
+    "\n",
+    "* Observation vs intervention, and the intervention definition of causality\n",
+    "* Types of interventions\n",
+    "* Using interventions to falsify and improve models\n",
+    "* \"do\"-notation\n",
+    "* Intervention prediction in simulation models\n",
+    "* Interventions as graph mutilation and program transforms\n",
+    "* Breaking equivalence with interventions\n",
+    "* Simulating causal effects and *potential outcomes*\n",
+    "* Implementation examples from forecasting"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Section 3: Identication and Estimation of Causal Effects from Data\n",
+    "\n",
+    "\n",
+    "因果推理的现代实践，尤其是在技术行业中，是在估计因果效应- i.e. quantification of how much a cause affects an outcome. 在本节之后，you will be able to explain to colleagues when estimation is impossible even when they think they can crack it with enough data or a clever algorithm.  You will be able to stand your ground in discussions about causality with Ph.D. statisticians and economists at top tech companies.  您将掌握程序性因果效应估计。您将获得深入研究实际使用的标准估计方法所需的基础。\n",
+    "\n",
+    "**Dates: February 27, March 5 and 12, 2020**\n",
+    "\n",
+    "**Topics**\n",
+    "\n",
+    "* Why we care about estimating causal effects\n",
+    "* Defining \"confounding\" with DAGs\n",
+    "* Simpson's Paradox, Monte Hall problem, Berkson's Paradox\n",
+    "* Statistics of causal effects: the estimand, the estimator, and the estimate\n",
+    "* Identification: Why causal effect inference is hard no matter how much data you have\n",
+    "* What is the \"do\"-calculus?\n",
+    "* Potential outcomes and individual treatment effects\n",
+    "* Valid adjustment sets for causal effect estimation\n",
+    "* The back door and the front door\n",
+    "* Single world intervention graphs\n",
+    "* Ignorability and SUTVA\n",
+    "* Introduction to the [DoWhy](https://www.microsoft.com/en-us/research/blog/dowhy-a-library-for-causal-inference/) library\n",
+    "* Statistical estimation methods: G-formula, propensity matching, instrumental variables, inverse probability weighting, and more."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Section 4: Counterfactual machine learning\n",
+    "\n",
+    "\n",
+    "Counterfactual reasoning sounds like \"I chose company A, and now I'm miserable but had I worked for company B, I would have been happy.\"  We make decisions and observe their causal consequences.  Then, based on our beliefs about the mechanisms of cause and effect in the world, we ask how would have things turned out differently if we had made a different decision.  We use this reasoning to improve our mental models for decision-making.  相对于典型的机器学习算法 that make decisions based exclusively on observed training data (things that *actually* happened), **（人类使用反事实推理）humans make decisions based both on observed data and imagined data (things that *might have* happened)**.  Future generations of machine learning need to incorporate counterfactual reasoning if they are to reason about the world as well as humans.\n",
+    "\n",
+    "\n",
+    "完成本节后，您将能够在代码中实现反事实推理算法。 This will prepare you to implement counterfactual reasoning algorithms in automated decision-making settings in industry, such as bandits and computational advertising. 您将有资格解决强化学习中的前沿问题。 Y您将能够评估机器学习算法的可解释性和算法偏差。\n",
+    "\n",
+    "\n",
+    "### Counterfactual deep dive\n",
+    "**Topics**\n",
+    "\n",
+    "* Counterfactual definition of causality\n",
+    "* Counterfactuals vs interventions\n",
+    "* Introduction to the structural causal model (SCM)\n",
+    "* Multiverse counterfactuals with SCMs\n",
+    "* Keystone counterfactual identities\n",
+    "* Relationship between SCMs and potential outcomes\n",
+    "\n",
+    "### Programming counterfactual reasoning into AI\n",
+    "\n",
+    "**Dates: April 2 and 9, 2020**\n",
+    "\n",
+    "* Counterfactual reasoning in bandits and reinforcement learning\n",
+    "* Reparameterizing probablistic models for multiverse counterfactuals\n",
+    "* Counterfactuals and intuitive physics\n",
+    "* From SCMs to programs and simulations"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "Collapsed": "false"
+   },
+   "source": [
+    "# 相关资料"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "- Ness Causal Machine Learning 60-Minute Blitz\n",
+    "\n",
+    "一个关于它近期工作的 60分钟快速报告。https://www.youtube.com/watch?v=Gdkc0cMnsL4\n",
+    "\n",
+    "- Ness 下注因果强化学习\n",
+    "\n",
+    "Last week, I started preparations to teach a few data science grad students on a special topic — causal modeling in reinforcement learning. 在思考这个话题后，我敢打赌：因果强化学习将在未来十年内成为AI杀手级的 marketing app。\n",
+    "\n",
+    "https://towardsdatascience.com/my-bet-on-causal-reinforcement-learning-d94fc9b37466"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## TWIML社区课程"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[Causal Modeling in Machine Learning](https://twimlai.com/program/causal-modeling-in-machine-learning/)\n",
+    "\n",
+    "We’re collaborating with research scientist and instructor Robert Ness to 将他的课程序列 “机器学习中的因果建模” 引入TWIML社区。 因果关系已成为ML/AI领域中非常热门的话题。 In fact, it’s come up in a good number of my recent conversations, like this one with Zach Lipton. 一个现状就是：One of the challenges facing those interested in learning about causality in ML is that most resources on the topic are geared towards the needs of statisticians or economists, versus those of data scientists and machine learning engineers.\n",
+    "\n",
+    "罗伯特（Robert）是初创公司 Gamalon的 ML 研究科学家，也是 Northeastern University 的一名讲师，他针对机器学习中的因果建模开发了一系列六个课程模块，这些模块旨在使数据科学家和工程师更加实用和方便地使用。他正在为东北大学的研究生现场授课，通过我们的新合作伙伴，罗伯特还将通过TWIML平台（即Zoom和Slack）托管一个学习小组。该学习小组将为TWIML入学者提供上线课程的一些好处。罗伯特将按顺序在每个星期的学习后每周举行一次回顾会议，可以通过Slack回答问题，可以对提交的作业进行个人评分，还可以协助完成课程作业和项目。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "这六个模块在AltDeep网站上列出。They are:\n",
+    "\n",
+    "- 机器学习中基于模型的思维。 Lay the foundation for causal models by deconstructing mental biases and acquiring new mental models for applied DS/ML.\n",
+    "- Do Causality like a Bayesian. Continue your “mental refactoring” by developing a Bayesian mental model for machine learning.\n",
+    "- How to Speak Graph; or DAG that’s a Nice Model! Become fluent in directed graphs and graph algorithms as a language of probability.\n",
+    "- The Tao of Do; Modeling and Simulating Causal Interventions. Learn to build your first causal generative machine learning model using a deep learning framework\n",
+    "- Applied Causal Inference; Identification and Estimation of Causal Effects from Data. Gain mastery of programmatic causal effect estimation.\n",
+    "- Counterfactual Machine Learning. Implement counterfactual reasoning algorithms in automated decision-making settings in industry."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "完成本课程后，您将能够在顶级技术组织的数据科学和机器学习团队的决策系统中构建因果推理算法。您将实施一个展示项目能力的 a portfolio project。 您将使用基于PyTorch的概率深度学习框架Pyro来实施家庭作业和项目，并且在课程结束时将成为使用该框架的专家。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 课程TA笔记\n",
+    "\n",
+    "\n",
+    "\n",
+    "- https://bookdown.org/robertness/causalml/docs/\n",
+    "\n",
+    "\n",
+    "这些是Robert O. Ness博士教授的有关机器学习中因果推理和建模的课程的讲义。这些笔记是一个正在进行的工作，是随着课程的进行而创建的。\n",
+    "它们是由教师，TA的Kaushal Paneri和Sicheng Hao课程以及该课程的2019年夏季学生创建的。\n",
+    "\n",
+    "\n",
+    "**Table of Contents:**\n",
+    "\n",
+    "1. 因果推断概述和课程目标\n",
+    "2. 贝叶斯网概率建模教程\n",
+    "3. Pyro 建模教程\n",
+    "4. Reasoning on DAGs\n",
+    "5. Introduction to Interventions\n",
+    "6. Calculating intervention distributions by covariate adjustment\n",
+    "7. Confounding, Paradoxes\n",
+    "8. Other stuff"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 教程\n",
+    "\n",
+    "我希望有一些相关教程。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "CausalML官方 \n",
+    "\n",
+    "https://github.com/robertness/causalML/tree/master/tutorials\n",
+    "\n",
+    "<img width=800 src=\"https://i.loli.net/2020/03/31/VX9NJGaIeWTvzfd.png\" >"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 其他资料"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[Machine Learning Goes Causal I: Why Causality Matters](https://www.statworx.com/ch/blog/machine-learning-goes-causal-i-why-causality-matters/)\n",
+    "\n",
+    "\n",
+    "在STATWORX，我们很高兴看到近年来机器学习的新领域不断发展：因果机器学习。简而言之，因果机器学习是机器学习算法的科学研究，可以估算因果效应。在过去的几年中，已经开发了不同的因果机器学习算法，将机器学习的进展与因果推理理论相结合，以估计不同类型的因果效应。我的同事Markus在较早的博客文章中已经介绍了其中一些算法。\n",
+    "\n",
+    "\n",
+    "由于因果机器学习是一个相当复杂的主题，因此我将撰写一系列博客文章，以逐步深入研究这个崭新的数据科学世界。第一篇博客文章是对该主题的介绍，重点介绍了因果机器学习是什么以及为什么它在实践中以及对数据科学的未来很重要。\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[Machine Learning Goes Causal II: Meet the Random Forest’s Causal Brother](https://www.statworx.com/at/blog/machine-learning-goes-causal-ii-meet-the-random-forests-causal-brother/)\n",
+    "\n",
+    "认识随机森林的因果兄弟\n",
+    "\n",
+    "- 在大多数应用中，也要关注超出平均效果的范围，以了解因果关系如何随可观察到的特征而变化。\n",
+    "\n",
+    "\n",
+    "Estimating heterogeneous treatment effects is nothing new. Econometrics and other social sciences have long been studying which variables predict a smaller or larger than average treatment effect, which in statistical terms is also known as Moderation. One of the most traditional ways to find heterogeneous treatment effects is to use a Multiple Linear Regression with interaction terms between the variables of interest (i.e. the ones which might lead to treatment heterogeneity) and the treatment indicator. In this blog post, I will always assume that the data is from a randomised experiment, such that the assumptions to identify treatment effects are valid without further complications. We then conclude that the treatment effect depends on the variables whose interaction term is statistically significant.\n",
+    "\n",
+    "估计异质治疗效果并不是什么新鲜事。计量经济学和其他社会科学长期以来一直在研究哪种变量预测的效果小于或大于平均治疗效果，这在统计学上也称为“适度”。寻找异质治疗效果的最传统方法之一是使用多重线性回归，其中在感兴趣的变量（即可能导致治疗异质性的变量）与治疗指标之间存在相互作用项。在此博客文章中，我将始终假设数据来自随机实验，从而确定治疗效果的假设是有效的，而不会造成进一步的复杂性。然后我们得出结论，治疗效果取决于相互作用项在统计学上具有显着性的变量。\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Over recent years, different Machine Learning algorithms have been developed to estimate heterogeneous treatment effects. Most of them are based on the idea of Decision Trees or Random Forests, just like the one I focus on in this blog post: Generalised Random Forests by Athey, Tibshirani and Wager (2018).\n",
+    "\n",
+    "Generalised Random Forests follows the idea of Random Forests and apart from heterogeneous treatment effect estimation, this algorithm can also be used for non-parametric quantile regression and instrumental variable regression. It keeps the main structure of Random Forests such as the recursive partitioning, subsampling and random split selection. However, instead of averaging over the trees Generalised Random Forests estimate a weighting function and uses the resulting weights to solve a local GMM model. To estimate heterogeneous treatment effects, this algorithm has two important additional features, which distinguish it from standard Random Forests.\n",
+    "\n",
+    "近年来，已经开发了不同的机器学习算法来估计异构处理效果。它们中的大多数基于决策树或随机森林的概念，就像我在此博客文章中关注的主题一样：Athey，Tibshirani和Wager（2018）撰写的Generalized Random Forests。广义随机森林遵循随机森林的思想，除了异质处理效果估计以外，该算法还可用于非参数分位数回归和工具变量回归。它保留了随机森林的主要结构，例如递归分区，子采样和随机分割选择。但是，不是对树进行平均，而是使用广义随机森林估计加权函数，并使用所得的加权来求解局部GMM模型。为了评估异构处理效果，该算法具有两个重要的附加功能，使其与标准随机森林区分开来。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[From how to why: An overview of causal inference in machine learning](https://www.ericsson.com/en/blog/2020/2/causal-inference-machine-learning)\n",
+    "\n",
+    "Artificial intelligence is good at predicting outcomes, but how do we go one step further? Here, we discuss how AI can use causal inference and machine learning to measure the effects of multiple variables – and why it’s important for technological progression.\n",
+    "\n",
+    "人工智能擅长预测结果，但我们又该如何走？在这里，我们将讨论AI如何使用因果推理和机器学习来衡量多个变量的影响，以及为什么它对技术进步很重要。\n",
+    "\n",
+    "Yoshua Bengio, one of the world’s most highly recognized AI experts, explained in a recent Wired interview: “It’s a big thing to integrate [causality] into AI. Current approaches to machine learning assume that the trained AI system will be applied on the same kind of data as the training data. In real life it is often not the case.” \n",
+    "\n",
+    "全球知名度最高的AI专家之一Yoshua Bengio在《连线》杂志最近的一次采访中解释说：“将因果关系整合到AI中是一件大事。当前的机器学习方法假设受过训练的AI系统将与训练数据应用于相同类型的数据。在现实生活中，情况往往并非如此。”最近的图灵奖获得者Yann LeCun在推特上持相同观点：“许多ML / DL（深度学习）人员知道因果推理是提高泛化的重要方法。”\n",
+    "\n",
+    "因果推理和机器学习可以解决当今机器学习面临的最大问题之一-许多现实世界的数据生成的方式与我们用来训练AI模型的数据的方式不同。这意味着机器学习模型通常不足以处理输入数据类型的变化，而且不能总是一概而论。相比之下，因果推理通过考虑在缺乏信息时可能发生的情况来明确克服了这个问题。最终，这意味着我们可以利用因果推理使ML模型更健壮和更通用。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[微软因果组 Causality and Machine Learning](https://www.microsoft.com/en-us/research/group/causal-inference/)\n",
+    "\n",
+    "\n",
+    "- 机器学习与因果推理：机器学习与因果推理之间存在丰富的相互作用。机器学习不仅为传统的因果推断技术提供了扩展方法，以利用当今的大规模，高维数据集进行关键的政策评估和质量决策，而且搜索算法等计算方法对于创建AutoCausal至关重要-一个自动化的数据科学家，可以集成领域知识，验证因果假设并按AutoML调整超参数。同时，因果推理方法和见解与鲁棒性，可概括性，偏见和可解释性等核心机器学习挑战直接相关。此外，对因果关系的理解被广泛认为是当前AI方法的关键缺陷，并且是构建更多类似人的机器智能的必要先驱。\n",
+    "- 从数据中回答因果问题：确定因果效应是科学查询的一个组成部分，涉及广泛的问题，例如了解在线系统的行为，社会政策的影响或疾病的危险因素。随着计算越来越影响各行各业，因果问题对于我们构建的所有计算机系统和应用程序的设计和数据驱动评估也至关重要。例如，算法建议如何影响我们的购买决策？它们如何影响学生的学习成果或医生的效能？这些是棘手的问题，需要考虑反事实：在拥有不同系统，政策或干预措施的世界中会发生什么？如果没有随机实验和因果推理，基于相关性的方法会使我们误入歧途。"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[]()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {
+    "height": "calc(100% - 180px)",
+    "left": "10px",
+    "top": "150px",
+    "width": "288px"
+   },
+   "toc_section_display": true,
+   "toc_window_display": true
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
